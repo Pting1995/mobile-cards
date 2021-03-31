@@ -1,1 +1,3 @@
 # mobile-cards
+
+expo start
