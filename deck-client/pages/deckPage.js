@@ -6,17 +6,44 @@ import cards from "../cards.json"
 
 function App({ navigation }) {
 
-    // var deckArr = [];
-    // var discardArr = [];
+    var deck = []
+    var hand = []
+    var discard = []
 
-    // function initDeck() {
-    //     for (var i = 0; i < cards.length; i++) {
-    //         deckArr.push(cards[i].url)
-    //         console.log(deckArr)
-    //     }
-    // }
+    // initializes deck, hand and discard arrays
+    function initDeck() {
+        deck = [];
+        hand = [];
+        discard = [];
+        deck = cards;
+        return deck;
+    }
 
-    // initDeck()
+    function getRandInt(max) {
+        return Math.floor(Math.random() * max)
+    }
+
+    // draw 1 card
+    function drawCard() {
+        // math.random to draw a card
+        var drawnCard = {}
+        var drawnCardIndex = getRandInt(deck.length)
+        drawnCard = deck[drawnCardIndex]
+        // add it to the hand
+        hand.push(drawnCard)
+        // delete it from the deck
+        deck.splice(drawnCardIndex, 1)
+        // console.log(deck)
+        // console.log(hand)
+    }
+
+    initDeck()
+
+    // console.log(deck)
+    // console.log(hand)
+    // console.log(discard)
+
+    initDeck()
 
     return (
         <View style={styles.container}>

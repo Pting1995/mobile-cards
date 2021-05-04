@@ -4,6 +4,15 @@ import { StyleSheet, Text, View, Button } from 'react-native';
 import 'react-native-gesture-handler';
 
 function App({ navigation }) {
+
+    function discardCard() {
+
+    }
+
+    function shuffleCard() {
+
+    }
+
     return (
         <View style={styles.container}>
             <Text>Hey</Text>
